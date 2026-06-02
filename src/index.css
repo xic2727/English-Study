@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:wght@300..900&family=JetBrains+Mono:wght@100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-comic: "Fredoka", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom soft glow classes to give a premium glassmorphic/sleek kid-friendly aesthetic */
+.sleek-card-rose {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(244, 63, 94, 0.08), 0 1px 3px rgba(244, 63, 94, 0.02);
+}
+
+.sleek-card-amber {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(217, 119, 6, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(217, 119, 6, 0.08), 0 1px 3px rgba(217, 119, 6, 0.02);
+}
+
+.sleek-card-sky {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(14, 165, 233, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.08), 0 1px 3px rgba(14, 165, 233, 0.02);
+}
+
+.sleek-card-purple {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(147, 51, 234, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(147, 51, 234, 0.08), 0 1px 3px rgba(147, 51, 234, 0.02);
+}
+
+.sleek-card-teal {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(13, 148, 136, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.08), 0 1px 3px rgba(13, 148, 136, 0.02);
+}
+
+.sleek-card-green {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(22, 163, 74, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(22, 163, 74, 0.08), 0 1px 3px rgba(22, 163, 74, 0.02);
+}
+

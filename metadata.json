@@ -1,0 +1,6 @@
+{
+  "name": "儿童多媒体英语学习与互动测试网站",
+  "description": "面向7岁女童的卡通风格多媒体英语学习网站，包含词汇卡片、拼写拼图、句型朗读、语法大换装和互动答题关卡，支持Speech Web语音朗读。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
