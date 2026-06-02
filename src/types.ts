@@ -3,7 +3,7 @@ export interface WordItem {
   english: string;
   chinese: string;
   phonetic: string;
-  category: 'clothes' | 'toys' | 'food' | 'grammar' | 'animals' | 'general';
+  category: string;
   emoji: string;
   sentence?: string;
   sentenceChinese?: string;
@@ -23,7 +23,7 @@ export interface StoryItem {
   lines: DialogueLine[];
   paragraphs?: string[];
   paragraphsChinese?: string[];
-  type: 'dialogue' | 'passage';
+  type: string;
   emoji: string;
   bgColor: string;
 }
@@ -33,12 +33,12 @@ export interface ListeningQuestion {
   audioPrompt: string; // The phrase read by SpeechSynthesis
   chineseInstruction: string;
   options: {
-    key: 'A' | 'B';
+    key: string;
     text: string;
     label: string;
   }[];
-  correctAnswer: 'A' | 'B';
-  type: 'category' | 'sentence' | 'response';
+  correctAnswer: string;
+  type: string;
   hint: string;
 }
 
