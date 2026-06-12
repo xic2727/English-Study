@@ -15,7 +15,7 @@ interface QuestionWordPractice {
 }
 
 interface MagicGrammarProps {
-  lessonId?: 'lesson1' | 'lesson2';
+  lessonId?: 'lesson1' | 'lesson2' | 'lesson9';
 }
 
 export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps) {
@@ -57,6 +57,27 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
 
   const wordOptionsL2 = ["a", "an", "The", "is", "are", "of"];
 
+  // ==================== LESSON 9 DATA & LOGIC ====================
+  const practicesL9: QuestionWordPractice[] = [
+    { id: 1, question: "______ is the boy in white?", response: "— He is Jack.", correctWord: "Who", hint: "询问「谁」", chinese: "—— 那个穿白衣服的男孩是谁？\n—— 他是杰克。" },
+    { id: 2, question: "______ is the zoo?", response: "— It's near the shop.", correctWord: "Where", hint: "询问「在哪里」", chinese: "—— 动物园在哪里呢？\n—— 在商店附近。" },
+    { id: 3, question: "______ dress do you like?", response: "— I like the red one.", correctWord: "Which", hint: "询问「哪一个」", chinese: "—— 你喜欢哪一件连衣裙？\n—— 我喜欢红色的那件。" },
+    { id: 4, question: "______ is your height?", response: "— My height is 1.3 meters.", correctWord: "What", hint: "询问「是什么」", chinese: "—— 你的身高是多少？\n—— 我的身高是1.3米。" },
+    { id: 5, question: "How ______ is your sister?", response: "— She is 1.5 meters tall.", correctWord: "tall", hint: "询问「多高」", chinese: "—— 你妹妹有多高？\n—— 她有一点五米高。" }
+  ];
+
+  const wordOptionsL9 = ["Who", "Where", "Which", "What", "tall", "meters"];
+
+  // L9 Height & Body Builder
+  const [continuousIdxL9, setContinuousIdxL9] = useState(0);
+  const heightListL9 = [
+    { text: "I am 1.4 meters tall.", verb: "tall", aux: "am", emoji: "🦒", person: "I" },
+    { text: "She is 1.5 meters tall.", verb: "tall", aux: "is", emoji: "📏", person: "She" },
+    { text: "We are spelling arm.", verb: "spelling", aux: "are", emoji: "💪", person: "We" },
+    { text: "He has a big face.", verb: "face", aux: "has", emoji: "🧒", person: "He" },
+    { text: "They have cute ears.", verb: "ears", aux: "have", emoji: "👂", person: "They" },
+  ];
+
   // L2 There Be dress-up state
   const [continuousIdxL2, setContinuousIdxL2] = useState(0);
   const thereBeListL2 = [
@@ -80,10 +101,10 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
 
 
   // ==================== HELPERS ====================
-  const practices = lessonId === 'lesson1' ? practicesL1 : practicesL2;
-  const wordOptions = lessonId === 'lesson1' ? wordOptionsL1 : wordOptionsL2;
-  const dressUpList = lessonId === 'lesson1' ? continuousListL1 : thereBeListL2;
-  const dressUpIdx = lessonId === 'lesson1' ? continuousIdxL1 : continuousIdxL2;
+  const practices = lessonId === 'lesson9' ? practicesL9 : (lessonId === 'lesson1' ? practicesL1 : practicesL2);
+  const wordOptions = lessonId === 'lesson9' ? wordOptionsL9 : (lessonId === 'lesson1' ? wordOptionsL1 : wordOptionsL2);
+  const dressUpList = lessonId === 'lesson9' ? heightListL9 : (lessonId === 'lesson1' ? continuousListL1 : thereBeListL2);
+  const dressUpIdx = lessonId === 'lesson9' ? continuousIdxL9 : (lessonId === 'lesson1' ? continuousIdxL1 : continuousIdxL2);
   const currentDressUpItem = dressUpList[dressUpIdx];
 
   const handleWordSelect = (word: string) => {
@@ -136,6 +157,8 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
     setContinuousVerb(null);
     if (lessonId === 'lesson1') {
       setContinuousIdxL1((prev) => (prev + 1) % dressUpList.length);
+    } else if (lessonId === 'lesson9') {
+      setContinuousIdxL9((prev) => (prev + 1) % dressUpList.length);
     } else {
       setContinuousIdxL2((prev) => (prev + 1) % dressUpList.length);
     }
@@ -154,7 +177,7 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
               : 'bg-white hover:bg-purple-100 text-purple-600 border-2 border-purple-50'
           }`}
         >
-          {lessonId === 'lesson2' ? '🧩 冠词魔法泡泡配对' : '🧩 疑问词气球配对'}
+          {lessonId === 'lesson2' ? '🧩 冠词魔法泡泡配对' : lessonId === 'lesson9' ? '🧩 疑问词与身高配对' : '🧩 疑问词气球配对'}
         </button>
         <button
           id={`btn-sub-tab-continuous-${lessonId}`}
@@ -165,7 +188,7 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
               : 'bg-white hover:bg-purple-100 text-purple-600 border-2 border-purple-50'
           }`}
         >
-          {lessonId === 'lesson2' ? '🛋️ There be 城堡大问答' : '👚 现在进行时换装'}
+          {lessonId === 'lesson2' ? '🛋️ There be 城堡大问答' : lessonId === 'lesson9' ? '🦒 身体与身高积木换装' : '👚 现在进行时换装'}
         </button>
       </div>
 
@@ -183,7 +206,7 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
               <div className="flex justify-between items-center mb-2">
                 <span className="flex items-center gap-2 font-extrabold text-purple-800 text-md">
                   <GraduationCap className="h-6 w-6 text-purple-600" />
-                  {lessonId === 'lesson2' ? '魔法语法本：冠词 a, an, the' : '魔法语法本：特殊疑问词的秘诀'}
+                  {lessonId === 'lesson2' ? '魔法语法本：冠词 a, an, the' : lessonId === 'lesson9' ? '魔法语法本：Where, Who, Which 疑问词与身高' : '魔法语法本：特殊疑问词的秘诀'}
                 </span>
                 <button
                   id={`toggle-help-${lessonId}`}
@@ -214,6 +237,24 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
                         <p className="text-[10px] text-gray-400 leading-tight mt-1">二次提到或双方皆知的特定事物。如：The doll is Lucy。</p>
                       </div>
                     </>
+                  ) : lessonId === 'lesson9' ? (
+                    <>
+                      <div className="bg-white p-2.5 border border-purple-100 rounded-xl shadow-sm">
+                        <span className="font-bold text-indigo-600 text-sm block">Where (询问地点)</span>
+                        <span className="text-gray-500 font-semibold">意为「在哪里」</span>
+                        <p className="text-[10px] text-gray-400 leading-tight mt-1">如：Where is the zoo? 它在商店附近。</p>
+                      </div>
+                      <div className="bg-white p-2.5 border border-purple-100 rounded-xl shadow-sm">
+                        <span className="font-bold text-indigo-600 text-sm block">Who (询问人)</span>
+                        <span className="text-gray-500 font-semibold">意为「谁」</span>
+                        <p className="text-[10px] text-gray-400 leading-tight mt-1">如：Who is the boy in white? 他是杰克。</p>
+                      </div>
+                      <div className="bg-white p-2.5 border border-purple-100 rounded-xl shadow-sm col-span-2 md:col-span-1">
+                        <span className="font-bold text-indigo-600 text-sm block">Which (特定选择)</span>
+                        <span className="text-gray-500 font-semibold">意为「哪一个」</span>
+                        <p className="text-[10px] text-gray-400 leading-tight mt-1">如：Which dress do you like? 我喜欢红色的。</p>
+                      </div>
+                    </>
                   ) : (
                     grammarLessons.questionWords.map((q: any, idx: number) => (
                       <div key={idx} className="bg-white p-2.5 border border-purple-100 rounded-xl shadow-sm">
@@ -228,6 +269,8 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
                 <p className="text-xs text-purple-700 leading-relaxed font-bold">
                   {lessonId === 'lesson2'
                     ? '快来翻开 Lucy 的包包日记！里面藏了好多冠词(a/an/the)和 there be 模型。先点击下面的词，再点击虚线格子，把它们放到正确的位置吧！'
+                    : lessonId === 'lesson9'
+                    ? '欢迎阅读身体与身高语法卡！先点击下方的拼写、疑问词，再点击卡片上的虚线填空，开启你的魔法挑战！'
                     : '小卡片上有好几个句子，有些词不小心溜走啦！先点击下面的疑问词，再点击卡片上的虚线，帮小词回家吧！'}
                 </p>
               )}
@@ -369,11 +412,13 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
                  🌟 城堡核心语法点 🌟
               </span>
               <h5 className="text-indigo-800 text-xl font-extrabold font-comic">
-                {lessonId === 'lesson2' ? 'There Be 句型（有某个事物）' : '现在进行时（正在发生）'}
+                {lessonId === 'lesson2' ? 'There Be 句型（有某个事物）' : lessonId === 'lesson9' ? '身体和身高描述 (be + height)' : '现在进行时（正在发生）'}
               </h5>
               <p className="text-xs text-indigo-600 font-bold mt-1">
                 {lessonId === 'lesson2'
                   ? 'There is 后面跟单数名字(一个)；There are 后面跟复数名字(两个或两个以上)。'
+                  : lessonId === 'lesson9'
+                  ? '主语 I am / He is / She is + 身高描述。'
                   : '公式：主语 + am/is/are + 动词-ing'}
               </p>
             </div>
@@ -475,10 +520,10 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
                   {/* Left Choice Column (Aux/There) */}
                   <div className="bg-purple-50/40 p-3 rounded-2xl border border-purple-100">
                     <span className="text-xs font-bold text-purple-600 block mb-2 text-center leading-none">
-                      {lessonId === 'lesson2' ? '句型主词 (There)' : '助动词衣服 (am/is/are)'}
+                      {lessonId === 'lesson2' ? '句型主词 (There)' : lessonId === 'lesson9' ? '句子助词 (am/is/are/has)' : '助动词衣服 (am/is/are)'}
                     </span>
                     <div className="flex flex-col gap-2">
-                      {(lessonId === 'lesson2' ? ['There', 'They', 'These'] : ['am', 'is', 'are']).map((item) => (
+                      {(lessonId === 'lesson2' ? ['There', 'They', 'These'] : lessonId === 'lesson9' ? ['am', 'is', 'are', 'has', 'have'] : ['am', 'is', 'are']).map((item) => (
                         <button
                           id={`choice-aux-${item}`}
                           key={item}
@@ -498,10 +543,10 @@ export default function MagicGrammar({ lessonId = 'lesson1' }: MagicGrammarProps
                   {/* Right Choice Column (Verb/Be-verb) */}
                   <div className="bg-sky-50/40 p-3 rounded-2xl border border-sky-100">
                     <span className="text-xs font-bold text-sky-600 block mb-2 text-center leading-none">
-                      {lessonId === 'lesson2' ? 'Be动词选择 (is/are)' : '正在进行动词 (-ing)'}
+                      {lessonId === 'lesson2' ? 'Be动词选择 (is/are)' : lessonId === 'lesson9' ? '特征词 (tall/face/ears/spelling)' : '正在进行动词 (-ing)'}
                     </span>
                     <div className="flex flex-col gap-2">
-                      {(lessonId === 'lesson2' ? ['is', 'are', 'am'] : ['playing', 'singing', 'swimming', 'riding', 'reading']).map((item) => (
+                      {(lessonId === 'lesson2' ? ['is', 'are', 'am'] : lessonId === 'lesson9' ? ['tall', 'face', 'ears', 'spelling'] : ['playing', 'singing', 'swimming', 'riding', 'reading']).map((item) => (
                         <button
                           id={`choice-verb-${item}`}
                           key={item}

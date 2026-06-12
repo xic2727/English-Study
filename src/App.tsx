@@ -16,7 +16,7 @@ type ActiveLand = 'word' | 'grammar' | 'story' | 'quiz';
 
 export default function App() {
   const [activeLand, setActiveLand] = useState<ActiveLand>('word');
-  const [currentLessonId, setCurrentLessonId] = useState<'lesson1' | 'lesson2'>('lesson1');
+  const [currentLessonId, setCurrentLessonId] = useState<'lesson1' | 'lesson2' | 'lesson9'>('lesson1');
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const lessons = [
@@ -37,6 +37,15 @@ export default function App() {
       emoji: '🍛',
       color: 'from-sky-400 to-indigo-400',
       activeColor: 'bg-gradient-to-tr from-indigo-400 to-sky-500 text-white shadow-[0_8px_16px_rgba(99,102,241,0.15)] ring-4 ring-indigo-100'
+    },
+    {
+      id: 'lesson9' as const,
+      num: 'Practice 9',
+      title: 'Practice 9 身体部位与身高描述',
+      desc: 'Where/Who/Which疑问词与身体拼写',
+      emoji: '🦒',
+      color: 'from-emerald-400 to-teal-400',
+      activeColor: 'bg-gradient-to-tr from-emerald-400 to-teal-500 text-white shadow-[0_8px_16px_rgba(16,185,129,0.15)] ring-4 ring-emerald-100'
     }
   ];
 
@@ -53,9 +62,22 @@ export default function App() {
         case 'story':
           return '这是故事乐园学堂！你可以听Emma和爸爸聊周末安排，或者翻翻我的食物菜谱，点击每句话就能听到声音啦！';
         case 'quiz':
-          return '太棒了！第一课大闯关开始了！看图猜词和趣味配对都在等着你，快来赢得城堡给你的满分王冠吧！';
+          return '太棒了！第一课大闯关开始了！看图猜词 and 趣味配对都在等着你，快来赢得城堡给你的满分王冠吧！';
         default:
           return '快来和我一起学英语吧！';
+      }
+    } else if (currentLessonId === 'lesson9') {
+      switch (activeLand) {
+        case 'word':
+          return '嗨！进入第九课单词城堡啦！这里有高高的长颈鹿陪伴，还有我们可爱的人体各部位拼读大冒险，一起来读吧！';
+        case 'grammar':
+          return '魔法语法升级啦！我们将探秘 Where, Who 和 Which 的特异功能，还要把我们的小胳膊、小耳朵完美描述出来哦！';
+        case 'story':
+          return '这里是第九课故事角！快来和Fred以及Tom一起打开寄自大连海滩的明信片，大声朗读各种多姿多彩的故事吧！';
+        case 'quiz':
+          return '第九课的终极挑战来啦！身体各部位拼写比拼，以及各种精彩的英文听音找错游戏正在等待你哦！';
+        default:
+          return '准备好了吗？和兔兔Sunny一起测量身高、探索大自然吧！';
       }
     } else {
       switch (activeLand) {
@@ -78,7 +100,7 @@ export default function App() {
     soundFX.playPop();
   };
 
-  const toggleLesson = (lessonId: 'lesson1' | 'lesson2') => {
+  const toggleLesson = (lessonId: 'lesson1' | 'lesson2' | 'lesson9') => {
     soundFX.playSuccess();
     setCurrentLessonId(lessonId);
   };
@@ -279,6 +301,13 @@ export default function App() {
                 >
                   【二课】伦敦
                 </button>
+                <button
+                  id="header-tab-les9"
+                  onClick={() => toggleLesson('lesson9')}
+                  className={`flex-1 text-center py-1.5 text-xs font-extrabold rounded-lg transition ${currentLessonId === 'lesson9' ? 'bg-white text-emerald-500 shadow-sm' : 'text-slate-400'}`}
+                >
+                  【九课】身体
+                </button>
               </div>
 
               {/* Inline layout trigger to manual expand/collapse */}
@@ -444,7 +473,7 @@ export default function App() {
              Made with love 💖 for happy kids learning English · 快乐英语城堡
            </p>
            <p className="mt-1 font-comic uppercase tracking-widest text-[9px] opacity-60">
-             © Practice {currentLessonId === 'lesson1' ? '7' : '8'} English Grammar Focus Applet
+             © Practice {currentLessonId === 'lesson1' ? '7' : currentLessonId === 'lesson9' ? '9' : '8'} English Grammar Focus Applet
            </p>
         </footer>
       </div>

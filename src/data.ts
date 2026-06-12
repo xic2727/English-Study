@@ -1055,6 +1055,411 @@ export const lessonsDatabase = {
         { word: 'There are', chinese: '有几个...', example: 'There are some books in my bag.', context: '后面接复数名词。' }
       ]
     }
+  },
+
+  lesson9: {
+    id: 'lesson9',
+    name: '第九课：Practice 9 身体、衣服与身高',
+    practiceTitle: 'Practice 9',
+    wordsData: [
+      {
+        id: 'w9-1',
+        english: 'arm',
+        chinese: '手臂',
+        phonetic: '/ɑːm/',
+        category: 'body',
+        emoji: '💪',
+        sentence: 'He has two strong arms.',
+        sentenceChinese: '他有两条强壮的手臂。'
+      },
+      {
+        id: 'w9-2',
+        english: 'eye',
+        chinese: '眼睛',
+        phonetic: '/aɪ/',
+        category: 'body',
+        emoji: '👁️',
+        sentence: 'She has big beautiful eyes.',
+        sentenceChinese: '她长着一双美丽的大眼睛。'
+      },
+      {
+        id: 'w9-3',
+        english: 'ear',
+        chinese: '耳朵',
+        phonetic: '/ɪə(r)/',
+        category: 'body',
+        emoji: '👂',
+        sentence: 'An ear can hear soft music.',
+        sentenceChinese: '耳朵能听到轻柔的音乐。'
+      },
+      {
+        id: 'w9-4',
+        english: 'foot',
+        chinese: '脚 (单数)',
+        phonetic: '/fʊt/',
+        category: 'body',
+        emoji: '🦶',
+        sentence: 'This is my left foot.',
+        sentenceChinese: '这是我的左脚。'
+      },
+      {
+        id: 'w9-5',
+        english: 'feet',
+        chinese: '双脚 (复数)',
+        phonetic: '/fiːt/',
+        category: 'body',
+        emoji: '👣',
+        sentence: 'We stand on our feet.',
+        sentenceChinese: '我们用双脚站立。'
+      },
+      {
+        id: 'w9-6',
+        english: 'face',
+        chinese: '脸',
+        phonetic: '/feɪs/',
+        category: 'body',
+        emoji: '👧',
+        sentence: 'She has a round sweet face.',
+        sentenceChinese: '她有一张圆圆可爱的脸。'
+      },
+      {
+        id: 'w9-7',
+        english: 'hair',
+        chinese: '头发',
+        phonetic: '/heə(r)/',
+        category: 'body',
+        emoji: '💇',
+        sentence: 'Anna has got long black hair.',
+        sentenceChinese: '安娜留着黑色长发。'
+      },
+      {
+        id: 'w9-8',
+        english: 'hand',
+        chinese: '手',
+        phonetic: '/hænd/',
+        category: 'body',
+        emoji: '✋',
+        sentence: 'Wave your hand and say goodbye.',
+        sentenceChinese: '挥挥手，说声再见。'
+      },
+      {
+        id: 'w9-9',
+        english: 'head',
+        chinese: '头',
+        phonetic: '/hed/',
+        category: 'body',
+        emoji: '🧑',
+        sentence: 'Shake your head to say no.',
+        sentenceChinese: '摇头表示否定。'
+      },
+      {
+        id: 'w9-10',
+        english: 'leg',
+        chinese: '腿',
+        phonetic: '/leɡ/',
+        category: 'body',
+        emoji: '🦵',
+        sentence: 'The runner has got long legs.',
+        sentenceChinese: '跑步运动员长着一双大长腿。'
+      },
+      {
+        id: 'w9-11',
+        english: 'mouth',
+        chinese: '嘴',
+        phonetic: '/maʊθ/',
+        category: 'body',
+        emoji: '👄',
+        sentence: 'Open your mouth and drink water.',
+        sentenceChinese: '张嘴喝口水。'
+      },
+      {
+        id: 'w9-12',
+        english: 'nose',
+        chinese: '鼻子',
+        phonetic: '/nəʊz/',
+        category: 'body',
+        emoji: '👃',
+        sentence: 'I can smell flowers with my nose.',
+        sentenceChinese: '我可以用鼻子闻到花香。'
+      },
+      {
+        id: 'w9-13',
+        english: 'smile',
+        chinese: '微笑',
+        phonetic: '/smaɪl/',
+        category: 'body',
+        emoji: '😊',
+        sentence: 'A sweet smile is on her face.',
+        sentenceChinese: '她的脸上洋溢着甜美的微笑。'
+      },
+      {
+        id: 'w9-14',
+        english: 'tall',
+        chinese: '高的 (身高)',
+        phonetic: '/tɔːl/',
+        category: 'height',
+        emoji: '🦒',
+        sentence: 'I am 1.4 meters tall.',
+        sentenceChinese: '我有一点四米高。'
+      },
+      {
+        id: 'w9-15',
+        english: 'height',
+        chinese: '身高',
+        phonetic: '/haɪt/',
+        category: 'height',
+        emoji: '📏',
+        sentence: 'My height is 1.3 meters.',
+        sentenceChinese: '我的身高是一点三米。'
+      },
+      {
+        id: 'w9-16',
+        english: 'meter',
+        chinese: '米',
+        phonetic: '/ˈmiːtə(r)/',
+        category: 'height',
+        emoji: '📐',
+        sentence: 'She is 1.5 meters tall.',
+        sentenceChinese: '她是一点五米高。'
+      }
+    ],
+    storiesData: [
+      {
+        id: 'story1',
+        title: 'How Tall Are You?',
+        titleChinese: '你有多高呀？',
+        introduction: 'Let\'s talk about heights together! We can ask "How tall are you?" or "What\'s your height?". Let\'s hear the dialogue.',
+        type: 'dialogue',
+        emoji: '📏',
+        bgColor: 'border-pink-200 bg-pink-50/70 text-pink-700',
+        lines: [
+          {
+            speaker: 'Emma',
+            text: 'How tall are you?',
+            chinese: '你多高呀？'
+          },
+          {
+            speaker: 'Tom',
+            text: 'I\'m 1.4 meters tall. What\'s your height?',
+            chinese: '我身高1.4米。你的身高是多少呢？'
+          },
+          {
+            speaker: 'Emma',
+            text: 'My height is 1.3 meters. How tall is your sister?',
+            chinese: '我的身高是1.3米。你妹妹有多高哇？'
+          },
+          {
+            speaker: 'Tom',
+            text: 'She\'s 1.5 meters tall. She is taller than me.',
+            chinese: '她身高1.5米。她比我还要高呢。'
+          }
+        ]
+      },
+      {
+        id: 'story2',
+        title: 'A Letter from Fred',
+        titleChinese: '弗雷德的一封来信',
+        introduction: 'Read the letter that Fred sent from the beautiful beach in Dalian! True/False assessment is waiting below.',
+        type: 'passage',
+        emoji: '✉️',
+        bgColor: 'border-amber-200 bg-amber-50/70 text-amber-700',
+        lines: [],
+        paragraphs: [
+          "Dear David, How are you? I am in Dalian. I am at the beach. It's sunny today. It's very hot.",
+          "The beach is very beautiful. The sky is blue and the water is clean. The sand is yellow.",
+          "Look at the clouds! There is a big white cloud. It looks like a cloud rabbit. It is very cute.",
+          "I like swimming. Blue is my favourite colour. What is your favourite colour? Write to me soon! Yours, Fred."
+        ],
+        paragraphsChinese: [
+          "亲爱的戴维：你还好吗？我现在大连呢。我正在沙滩旁边玩耍。今天天气晴空万里，真的很热唷。",
+          "沙滩真是太美丽了，天空蔚蓝，海水很乾净。沙子也是金黄透亮的。",
+          "你看天空的那些云朵！有一朵好大的白云，它看起来简直太像一只活蹦乱跳的白兔了，真是太可爱了！",
+          "我特别喜欢去海里游泳。蓝色是我最爱的颜色。那你最中意的颜色是什么呢？快点给我回信吧！你的，弗雷德。"
+        ]
+      }
+    ],
+    listeningQuestions: [
+      {
+        id: 'l9-1',
+        audioPrompt: 'ear',
+        chineseInstruction: '听录音，选出与所听内容相同品类的一项。',
+        options: [
+          { key: 'A', text: 'eye', label: '眼睛 (属于身体部位) 👁️' },
+          { key: 'B', text: 'dress', label: '连衣裙 (属于衣服类别) 👗' }
+        ],
+        correctAnswer: 'A',
+        type: 'category',
+        hint: '录音听到 "ear" (耳朵) 属于身体部位，和 "eye" 是一类！'
+      },
+      {
+        id: 'l9-2',
+        audioPrompt: 'shorts',
+        chineseInstruction: '听录音，选出与所听内容相同品类的一项。',
+        options: [
+          { key: 'A', text: 'face', label: '脸部 (属于身体部位) 👧' },
+          { key: 'B', text: 'jacket', label: '夹克 (属于衣服类别) 🧥' }
+        ],
+        correctAnswer: 'B',
+        type: 'category',
+        hint: '录音听到 "shorts" (短裤) 属于衣服类，和 "jacket" (夹克) 是一类！'
+      },
+      {
+        id: 'l9-3',
+        audioPrompt: 'trousers',
+        chineseInstruction: '听录音，选出与所听内容相同品类的一项。',
+        options: [
+          { key: 'A', text: 'T-shirt', label: 'T恤 (所属衣服类别) 👕' },
+          { key: 'B', text: 'mouth', label: '嘴巴 (所属身体部位) 👄' }
+        ],
+        correctAnswer: 'A',
+        type: 'category',
+        hint: '听到的单词是 "trousers" (裤子) 属于衣服分类哦，和 "T-shirt" 是一组！'
+      },
+      {
+        id: 'l9-4',
+        audioPrompt: 'How tall is your sister?',
+        chineseInstruction: '听录音，选出你所听到的句子。',
+        options: [
+          { key: 'A', text: 'How old is your sister?', label: '你妹妹几岁了？ 🎂' },
+          { key: 'B', text: 'How tall is your sister?', label: '你妹妹有多高？ 📏' }
+        ],
+        correctAnswer: 'B',
+        type: 'sentence',
+        hint: '仔细辩听 "tall" (身高的) 的发音。'
+      },
+      {
+        id: 'l9-5',
+        audioPrompt: 'My height is 1.3 meters.',
+        chineseInstruction: '听录音，选出你所听到的句子。',
+        options: [
+          { key: 'A', text: 'My height is 1.3 meters.', label: '我的身高是1.3米。 📏' },
+          { key: 'B', text: 'My height is 1.4 meters.', label: '我的身高是1.4米。 📏' }
+        ],
+        correctAnswer: 'A',
+        type: 'sentence',
+        hint: '关键听数字音 "one point three" (1.3) 米哦！'
+      },
+      {
+        id: 'l9-6',
+        audioPrompt: 'Who is on the motorbike?',
+        chineseInstruction: '听问句，选择最恰当的答语。',
+        options: [
+          { key: 'A', text: 'She is at the bus stop.', label: '她正在公共汽车站。 🛑' },
+          { key: 'B', text: 'My little sister is on the motorbike.', label: '我的小妹妹正在摩托车上呢。 🏍️' }
+        ],
+        correctAnswer: 'B',
+        type: 'response',
+        hint: '问句是: "摩托车上那是谁啊?", 故回答关于人 "My little sister..."！'
+      },
+      {
+        id: 'l9-7',
+        audioPrompt: 'Where is the zoo?',
+        chineseInstruction: '听问句，选择最恰当的答语。',
+        options: [
+          { key: 'A', text: 'He is Jack.', label: '他是杰克。 👦' },
+          { key: 'B', text: 'It\'s near the shop.', label: '它和商店靠得很近。 🏪' }
+        ],
+        correctAnswer: 'B',
+        type: 'response',
+        hint: '问句是: "动物园在哪里呢?", 代表要回答具体的地点、方位 "near the shop"！'
+      }
+    ],
+    matchPairs: [
+      {
+        id: 'mp9-1',
+        character: { name: 'Jack', avatar: '👦', gender: 'boy', index: 1 },
+        activity: {
+          description: 'arms muscle',
+          chinese: '强壮的双臂',
+          emoji: '💪',
+          imagePlaceholder: 'arms'
+        },
+        key: 'A'
+      },
+      {
+        id: 'mp9-2',
+        character: { name: 'Tom', avatar: '👦', gender: 'boy', index: 2 },
+        activity: {
+          description: 'how tall 1.4m',
+          chinese: '身高有1.4米高哦',
+          emoji: '🦒',
+          imagePlaceholder: 'tall'
+        },
+        key: 'B'
+      },
+      {
+        id: 'mp9-3',
+        character: { name: 'Sister', avatar: '👧', gender: 'girl', index: 3 },
+        activity: {
+          description: 'long brown hair',
+          chinese: '漂亮的长发和裙子',
+          emoji: '💇',
+          imagePlaceholder: 'hair'
+        },
+        key: 'C'
+      }
+    ],
+    unscrambleItems: [
+      { id: 'u9-1', correctWord: 'morning', scrambled: 'ninmorg', chinese: '早上，上午', emoji: '🌅', category: '时间' },
+      { id: 'u9-2', correctWord: 'year', scrambled: 'eayr', chinese: '年，年份', emoji: '📅', category: '时间' },
+      { id: 'u9-3', correctWord: 'night', scrambled: 'ghtni', chinese: '夜晚，夜间', emoji: '🌙', category: '时间' },
+      { id: 'u9-4', correctWord: 'day', scrambled: 'dya', chinese: '白昼，天', emoji: '☀️', category: '时间' },
+      { id: 'u9-5', correctWord: 'arm', scrambled: 'ram', chinese: '手臂', emoji: '💪', category: '身体部位' },
+      { id: 'u9-6', correctWord: 'face', scrambled: 'cfae', chinese: '脸蛋', emoji: '👧', category: '身体部位' },
+      { id: 'u9-7', correctWord: 'ear', scrambled: 'aer', chinese: '耳朵', emoji: '👂', category: '身体部位' },
+      { id: 'u9-8', correctWord: 'foot', scrambled: 'ooft', chinese: '脚巴牙', emoji: '🦶', category: '身体部位' }
+    ],
+    grammarMistakes: [
+      {
+        id: 'gm9-1',
+        wrongSentence: 'I is 1.4 meters tall.',
+        wrongWord: 'is',
+        correctedWord: 'am',
+        fullCorrectSentence: 'I am 1.4 meters tall.',
+        chinese: '我身高1.4米高。(第一人称主格 I 无论如何要搭配 am 动词。)',
+        emoji: '🦒'
+      },
+      {
+        id: 'gm9-2',
+        wrongSentence: 'Who are the boy in white?',
+        wrongWord: 'are',
+        correctedWord: 'is',
+        fullCorrectSentence: 'Who is the boy in white?',
+        chinese: '穿白衣的小孩是谁？(the boy in white 是第三人称单数，故搭配 is。)',
+        emoji: '👦'
+      },
+      {
+        id: 'gm9-3',
+        wrongSentence: 'There are many book on the shelf.',
+        wrongWord: 'book',
+        correctedWord: 'books',
+        fullCorrectSentence: 'There are many books on the shelf.',
+        chinese: '书架上有许许多多书。(many后面修饰名片要用复数 books 哦！)',
+        emoji: '📚'
+      },
+      {
+        id: 'gm9-4',
+        wrongSentence: 'Sally likes play the piano.',
+        wrongWord: 'play',
+        correctedWord: 'playing',
+        fullCorrectSentence: 'Sally likes playing the piano.',
+        chinese: '萨莉中意于弹钢琴。(like后面接正在进行的习惯操作，采用 playing 形式！)',
+        emoji: '🎹'
+      },
+      {
+        id: 'gm9-5',
+        wrongSentence: 'Where are the zoo?',
+        wrongWord: 'are',
+        correctedWord: 'is',
+        fullCorrectSentence: 'Where is the zoo?',
+        chinese: '动物园今天开在哪呢？(单数 the zoo 只需要配单数谓语 is 就可以啦。)',
+        emoji: '🦁'
+      }
+    ],
+    grammarLessons: {
+      articlesLesson: [], // unused but satisfies logic shape
+      thereBeLesson: []   // unused but satisfies logic shape
+    }
   }
 };
 

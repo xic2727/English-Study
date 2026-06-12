@@ -9,7 +9,7 @@ import { soundFX } from '../utils/sound';
 interface FunQuizProps {
   listening?: ListeningQuestion[];
   mistakes?: GrammarMistakeItem[];
-  lessonId?: 'lesson1' | 'lesson2';
+  lessonId?: 'lesson1' | 'lesson2' | 'lesson9';
 }
 
 export default function FunQuiz({
@@ -124,6 +124,8 @@ export default function FunQuiz({
               <p className="text-sm font-semibold text-gray-500 leading-relaxed mb-6 px-1">
                 {lessonId === 'lesson2'
                   ? '哈罗小勇士！今天我们将开启第二课 (Practice 8) 的终极听力与语法纠错测验！准备好和小伙伴Tina、还有美味牛排一起冲关，赢取专属金牌证书吧！'
+                  : lessonId === 'lesson9'
+                  ? '哈罗小勇士！今天我们将开启第九课 (Practice 9) 的终极听力与语法纠错测验！准备好和小伙伴Fred、还有量身高的尺子一起冲关，赢取专属金牌证书吧！'
                   : '哈罗小天使！我们将进行第一课 (Practice 7) 的听力魔法、影子句子、口语回答和找错纠错四大硬核挑战，快来带上冠冕吧！'}
               </p>
 
@@ -588,7 +590,7 @@ export default function FunQuiz({
                 </span>
                 
                 <h2 className="text-2xl md:text-3xl font-extrabold text-yellow-600 font-comic mb-4">
-                  {lessonId === 'lesson2' ? '⭐ 第二课荣誉小奖牌' : '⭐ 第一课荣誉小角标'}
+                  {lessonId === 'lesson2' ? '⭐ 第二课荣誉小奖牌' : lessonId === 'lesson9' ? '⭐ 第九课荣誉金质奖牌' : '⭐ 第一课荣誉小角标'}
                 </h2>
 
                 <div className="h-1 bg-yellow-100 max-w-xs mx-auto mb-6 rounded-full"></div>
@@ -604,6 +606,8 @@ export default function FunQuiz({
                 <p className="text-xs md:text-sm text-gray-600 leading-relaxed max-w-sm mx-auto mb-6 font-semibold">
                   {lessonId === 'lesson2'
                     ? '在城堡的"Practice 8 伦敦笔友与美味午餐词句大闯关"中，成功攻克了排队、信号灯、a/an冠词和there structures的所有大冒险！'
+                    : lessonId === 'lesson9'
+                    ? '在城堡的"Practice 9 身体部位与身高大冒险"中，成功攻克了手臂耳朵眼睛、拼写卡、Where/Who疑问句和身高测量的所有大试炼！'
                     : '在城堡的"Practice 7 衣服与玩具词名大闯关"中，成功通过了听力、字母jaws、进行时语法等所有艰难试炼，满载而归！'}
                 </p>
 
@@ -616,13 +620,13 @@ export default function FunQuiz({
                 {/* Rewards collection */}
                 <div className="flex justify-center gap-2.5 mb-2 flex-wrap">
                   <span className="inline-flex items-center gap-1 bg-rose-50 text-rose-600 font-bold text-[10px] md:text-xs py-1.5 px-3 rounded-xl border border-rose-100/40">
-                    💅 伦敦通晓王
+                    {lessonId === 'lesson9' ? '📐 身高精算师' : '💅 伦敦通晓王'}
                   </span>
                   <span className="inline-flex items-center gap-1 bg-sky-50 text-sky-600 font-bold text-[10px] md:text-xs py-1.5 px-3 rounded-xl border border-sky-100/40">
-                    🍔 营养午餐星
+                    {lessonId === 'lesson9' ? '👀 身体大百科' : '🍔 营养午餐星'}
                   </span>
                   <span className="inline-flex items-center gap-1 bg-purple-50 text-purple-600 font-bold text-[10px] md:text-xs py-1.5 px-3 rounded-xl border border-purple-100/40">
-                    🔮 there be大满贯
+                    {lessonId === 'lesson9' ? '✍️ 影子书信家' : '🔮 there be大满贯'}
                   </span>
                 </div>
               </div>

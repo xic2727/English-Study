@@ -8,7 +8,7 @@ import { soundFX } from '../utils/sound';
 
 interface WordCastleProps {
   words?: WordItem[];
-  lessonId?: 'lesson1' | 'lesson2';
+  lessonId?: 'lesson1' | 'lesson2' | 'lesson9';
 }
 
 export default function WordCastle({ words = wordsData, lessonId = 'lesson1' }: WordCastleProps) {
@@ -19,6 +19,9 @@ export default function WordCastle({ words = wordsData, lessonId = 'lesson1' }: 
   // States for spelling game
   const [spellList] = useState<WordItem[]>(() => {
     // Select spelling-friendly words of appropriate difficulty for kids
+    if (lessonId === 'lesson9') {
+      return words.filter(w => ['arm', 'eye', 'ear', 'foot', 'face', 'hair', 'hand', 'head'].includes(w.english));
+    }
     if (lessonId === 'lesson2') {
       return words.filter(w => ['room', 'kite', 'guitar', 'lamp', 'piano', 'rug', 'sofa', 'mirror'].includes(w.english));
     }
@@ -45,6 +48,13 @@ export default function WordCastle({ words = wordsData, lessonId = 'lesson1' }: 
     { text: "This is a blue bird.", chinese: "这是一只蓝色的鸟。" },
     { text: "The blue bird is flying.", chinese: "这只蓝色的鸟在飞翔。" },
     { text: "The blue bird is flying in the sky.", chinese: "这只蓝色的鸟在天空中飞翔。" }
+  ] : lessonId === 'lesson9' ? [
+    { text: "Smile", chinese: "微笑" },
+    { text: "A smile", chinese: "一个微笑" },
+    { text: "A sweet smile", chinese: "一个甜美的微笑" },
+    { text: "This is a sweet smile.", chinese: "这是一个甜美的微笑。" },
+    { text: "She has a sweet smile.", chinese: "她有着一个甜美的微笑。" },
+    { text: "She has a sweet smile on her face.", chinese: "她的脸上洋溢着一个甜美的微笑。" }
   ] : [
     { text: "Dog", chinese: "狗" },
     { text: "A dog", chinese: "一只狗" },
@@ -161,7 +171,7 @@ export default function WordCastle({ words = wordsData, lessonId = 'lesson1' }: 
               : 'bg-white hover:bg-sky-100 text-sky-500 border-2 border-sky-100'
           }`}
         >
-          {lessonId === 'lesson2' ? '🐦 小鸟魔法句组' : '🐶 小狗魔法句组'}
+          {lessonId === 'lesson2' ? '🐦 小鸟魔法句组' : lessonId === 'lesson9' ? '😊 微笑魔法句组' : '🐶 小狗魔法句组'}
         </button>
       </div>
 
@@ -363,14 +373,14 @@ export default function WordCastle({ words = wordsData, lessonId = 'lesson1' }: 
             <div className="bg-white rounded-3xl border-8 border-sky-100 shadow-xl p-6">
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-10 w-10 rounded-full bg-sky-100 flex items-center justify-center text-xl">
-                  {lessonId === 'lesson2' ? '🐦' : '🐶'}
+                  {lessonId === 'lesson2' ? '🐦' : lessonId === 'lesson9' ? '😊' : '🐶'}
                 </div>
                 <div>
                   <h4 className="text-xl font-extrabold text-sky-700">
-                    {lessonId === 'lesson2' ? '小鸟魔法句组 (Pyramid)' : '小狗魔法句组 (Pyramid)'}
+                    {lessonId === 'lesson2' ? '小鸟魔法句组 (Pyramid)' : lessonId === 'lesson9' ? '微笑魔法句组 (Pyramid)' : '小狗魔法句组 (Pyramid)'}
                   </h4>
                   <p className="text-xs text-sky-500 font-bold">
-                    {lessonId === 'lesson2' ? '源自课本第03天·和可爱的蓝知更鸟一起朗读扩句金字塔！' : '源自课本第37天·和可爱的金毛寻回犬一起朗读句子积木！'}
+                    {lessonId === 'lesson2' ? '源自课本第03天·和可爱的蓝知更鸟一起朗读扩句金字塔！' : lessonId === 'lesson9' ? '跟着可爱的女孩一起朗读微笑扩句金字塔！' : '源自课本第37天·和可爱的金毛寻回犬一起朗读句子积木！'}
                   </p>
                 </div>
               </div>
@@ -429,7 +439,7 @@ export default function WordCastle({ words = wordsData, lessonId = 'lesson1' }: 
               {/* Progress Slider Button control */}
               <div className="flex md:flex-row flex-col justify-between items-center gap-4 bg-sky-50/50 p-4.5 rounded-2xl">
                 <div className="flex items-center gap-3">
-                  <div className="text-3xl animate-bounce">{lessonId === 'lesson2' ? '🦜' : '🦮'}</div>
+                  <div className="text-3xl animate-bounce">{lessonId === 'lesson2' ? '🦜' : lessonId === 'lesson9' ? '👧' : '🦮'}</div>
                   <div>
                     <span className="text-xs font-extrabold text-sky-500 uppercase block">成长魔法等级</span>
                     <span className="text-sm font-bold text-gray-700">金牌小学者 · 第 {sentenceStep + 1} 句</span>

@@ -8,7 +8,7 @@ import { soundFX } from '../utils/sound';
 
 interface StoryCornerProps {
   stories?: StoryItem[];
-  lessonId?: 'lesson1' | 'lesson2';
+  lessonId?: 'lesson1' | 'lesson2' | 'lesson9';
 }
 
 export default function StoryCorner({ stories = storiesData, lessonId = 'lesson1' }: StoryCornerProps) {
@@ -134,6 +134,25 @@ export default function StoryCorner({ stories = storiesData, lessonId = 'lesson1
       id: 2,
       text: "2. Mummy is frying eggs for lunch.",
       chinese: "妈妈正在煎鸡蛋准备我们的午饭？(是的，童谣里唱著 \"Eggs, eggs. I am frying eggs.\")",
+      expected: true
+    }
+  ] : lessonId === 'lesson9' ? [
+    {
+      id: 1,
+      text: "1. Fred is writing a letter from Beijing.",
+      chinese: "Fred是在北京写这封信的吗？ (其实信中提到 \"I am in Dalian\" 大连哦！)",
+      expected: false
+    },
+    {
+      id: 2,
+      text: "2. The water is clean and the sand is yellow.",
+      chinese: "海水很清澈，并且沙子是黄绿色的吗？(是的，信中写道 \"The water is clean. The sand is yellow.\")",
+      expected: true
+    },
+    {
+      id: 3,
+      text: "3. Tom's sister is taller than him.",
+      chinese: "Tom的妹妹比他还要高吗？(是的，对话中提到妹妹有1.5米高，而Tom是1.4米，他妹妹更矮其实是错的，多高多矮一目了然！)",
       expected: true
     }
   ] : [
